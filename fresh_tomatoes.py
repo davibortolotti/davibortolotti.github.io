@@ -105,7 +105,7 @@ main_page_head = '''
             padding: 2px;
             margin: 0;
             bottom: 80px;
-            left: 200px;
+            left: 0px;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
