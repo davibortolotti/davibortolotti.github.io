@@ -1,66 +1,38 @@
-<!DOCTYPE html>
+<!doctype HTML>
 
-{% load static %}
-<html lang="en-us">
+<html>
+  <head >
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/template.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Quicksand" rel="stylesheet">
+    <script src="./lib/jquery-3.2.1.js"></script>
+    <script src="./lib/knockout-3.4.2.js"></script>
 
-    <head>
-        <title>The Jazz History Website</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
-    </head>
+  </head>
 
-    <body class="blackbackground">
-        <div class="wrapper flex-container">
+  <body class="darkbackground">
+    <h1 class="title">The Laranjeiras Guide</h1>
 
-            <header class="title">
-                <h1>History of Jazz</h1>
-            </header>
-
-            <section class="content">
-                <div class="subtitle">
-                    <h2>Welcome to the Jazz History Website!</h2>
-                    <p>Here you will find all you need to know about the musical
-                    style of the century.</p>
-                </div>
-
-                <article class="history">
-
-                <h3 class="history__title">Ragtime</h3>
-                <p>The abolition of slavery in 1865 led to new opportunities
-                 for the education of freed African Americans.
-                 Although strict segregation limited employment opportunities
-                 for most blacks, many were able to find work in entertainment.
-                 Black musicians were able to provide entertainment in dances,
-                 minstrel shows, and in vaudeville, during which time many
-                 marching bands were formed. Black pianists played in bars,
-                 clubs, and brothels, as ragtime developed.
-                </p>
-                <img class="history__image"src="https://vignette.wikia.nocookie.net/ffr/images/1/18/ScottJoplin.jpg/revision/latest?cb=20150327081334"/>
-                <p>Ragtime appeared as sheet music, popularized by African-
-                American musicians such as the entertainer Ernest Hogan,
-                whose hit songs appeared in 1895. Two years later, Vess
-                Ossman recorded a medley of these songs as a banjo solo
-                known as "Rag Time Medley".
-                Also in 1897, the white composer William H.
-                Krell published his "Mississippi Rag" as
-                the first written piano instrumental ragtime piece, and Tom
-                Turpin published his "Harlem Rag", the first rag published
-                by an African-American.</p>
-                <img class="history__image"src="
-                http://ragpiano.com/nostalgia/saloon1.jpg"/>
-
-
-                </article>
-
-                <div class="spotify">
-                    <iframe src="https://open.spotify.com/embed?uri=spotify:user:davibortolotti:playlist:7fzBHffVyyPILeTYvw76Hx"
-                     width="80%" height="600" frameborder="0" allowtransparency="true" view="coverart"></iframe>
-                </div>
-            </section>
-
+    <div class="content">
+      <aside class="lateralbar">
+        <div class="filter">
+          <select id="select" class="myfont "data-bind="options: types, optionsCaption: 'Show all', value: value, valueAllowUnset: true"></select>
+          <button id="filterbutton" class="myfont navbutton" data-bind="click: filter">Filter</button>
         </div>
+        <ul id="placelist" data-bind="foreach: venues">
+          <button class="myfont navbutton" data-bind="text: title, click: zoomTo"></button>
+        </ul>
+      </aside>
 
-    </body>
+      <div id="map"></div>
+    </div>
 
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb6_U6QeTd2MZnmxK70TJpYEYW0_Ruh3Y"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
