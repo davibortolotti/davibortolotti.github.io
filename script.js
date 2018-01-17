@@ -349,9 +349,9 @@ var initMap = function() {
         var type = places[i].type;
         var icon = function() {
           if (places[i].type == 'Restaurant') {
-            return './lib/img/Restaurant.png'
+            return './lib/img/restaurant.png'
           } else if (places[i].type == 'Park') {
-            return './lib/img/Park.png'
+            return './lib/img/park.png'
           } else if (places[i].type == 'Market') {
             return './lib/img/market.png'
           } else if (places[i].type == 'Club') {
