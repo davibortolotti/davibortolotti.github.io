@@ -24,7 +24,8 @@ places = [
    type: 'Restaurant'},
   {title: 'Princesa', location: {lat: -22.9386820, lng:-43.1922720},
    type: 'Market'},
-
+  {title: 'Praça São Salvador', location: {lat: -22.9337530,lng: -43.1799250},
+   type: 'Park'},
 ];
 
 var styles = [
@@ -512,8 +513,16 @@ var myViewModel = function() {
 initMap();
 ko.applyBindings(myViewModel);
 
+// SETS CLICK FUNCTION
 $('#menubutton').click(function() {
   console.log('click');
   console.log($('lateralbar'))
   $('.lateralbar').toggleClass('hide');
+})
+
+// FIXES THE SCROLL BAR FOR THE LATERAL NAVIGATION BAR
+$('.lateralbar').css('max-height', $('#map').css('height'));
+$(window).resize( function() {
+  console.log('hi');
+  $('.lateralbar').css('max-height', $('#map').css('height'));
 })
