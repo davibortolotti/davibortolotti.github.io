@@ -132,3 +132,14 @@ html, body {
     font-size: .8em;
   }
 }
+
+@media screen and (max-width: 370px) {
+  .title {
+    font-size: 1.5em;
+    padding-left: 4px;
+    padding-top: 16px;
+  }
+  #menubutton {
+    margin-left: 6px;
+  }
+}
