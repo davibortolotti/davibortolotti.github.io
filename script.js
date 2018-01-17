@@ -419,7 +419,7 @@ var initMap = function() {
 
                 success: function (data) {
                   // sets the content of the info window
-                  content = '<div class="myfont"><h2><a href="' + data.response.venue.canonicalUrl + '">' + data.response.venue.name + '</a></h2>';
+                  content = '<div class="myfont infowindowfont"><h2><a href="' + data.response.venue.canonicalUrl + '">' + data.response.venue.name + '</a></h2>';
                   content += '<p>' + data.response.venue.location.address + '</p>';
                   if (data.response.venue.hours != undefined) {
                     content += '<p>' + data.response.venue.hours.status + '</p>';
@@ -515,5 +515,5 @@ ko.applyBindings(myViewModel);
 $('#menubutton').click(function() {
   console.log('click');
   console.log($('lateralbar'))
-  $('.lateralbar').toggle();
+  $('.lateralbar').toggleClass('hide');
 })
