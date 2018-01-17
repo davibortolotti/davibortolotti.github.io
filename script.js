@@ -511,3 +511,9 @@ var myViewModel = function() {
 
 initMap();
 ko.applyBindings(myViewModel);
+
+$('#menubutton').click(function() {
+  console.log('click');
+  console.log($('lateralbar'))
+  $('.lateralbar').toggle();
+})
